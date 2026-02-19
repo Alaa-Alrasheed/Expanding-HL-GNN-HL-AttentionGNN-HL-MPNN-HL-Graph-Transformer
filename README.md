@@ -1,4 +1,4 @@
-**# Hierarchical Learning Graph Attention Network (HL-Attn)
+# Hierarchical Learning Graph Attention Network (HL-Attn)
 
 This repository contains the official PyTorch implementation for the paper:  
 **"[Insert Exact Paper Title Here]"**
@@ -16,23 +16,12 @@ It includes the code to reproduce experiments on standard sparse citation networ
 
 ## Installation
 
-We recommend using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or Anaconda to manage your environment.
+We recommend using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or Anaconda to manage your environment. You can set everything up by copying and pasting the block below into your terminal:
 
-1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
-   cd YOUR_REPOSITORY_NAME
-Create and activate a virtual environment (optional but recommended):
-
-'''Bash
-conda create -n hl-attn python=3.9 -y
-conda activate hl-attn
-Install the dependencies:
-
-'''Bash
-pip install -r requirements.txt
-(Note: Depending on your hardware, you may need to install the specific versions of torch and torch_geometric that match your CUDA version from their official websites).
-**
+   conda create -n hl-attn python=3.9 -y
+   conda activate hl-attn
+   pip install -r requirements.txt
 
 Usage
 You can run the model using main.py. The script will automatically download the required datasets (via PyTorch Geometric) on the first run.
