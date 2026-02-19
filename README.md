@@ -1,45 +1,74 @@
-# Hierarchical Learning Graph Attention Network (HL-Attn)
+Hierarchical Graph Models for Link Prediction
 
-This repository contains the official PyTorch implementation for the paper:  
-**"[Insert Exact Paper Title Here]"**
+Official PyTorch implementation of three hierarchical graph architectures for link prediction:
 
-## Overview
-This codebase implements the **Hierarchical Learning (HL)** framework for Graph Neural Networks. The flagship model, **HL-Attn**, utilizes a hierarchical aggregation mechanism across multiple attention layers to alleviate oversmoothing and effectively capture both local and long-range structural dependencies. 
+HL-MPNN (Hierarchical Message Passing Network)
 
-It includes the code to reproduce experiments on standard sparse citation networks (Cora, Citeseer, Pubmed) and dense co-purchase graphs (Amazon Photo, Computers).
+HL-Attn (Hierarchical Graph Attention Network)
 
-## Repository Structure
-* `main.py`: The main entry point for running experiments. It handles dataset loading, training loops, evaluation, and logging.
-* `models.py`: Contains the PyTorch Geometric implementations of the proposed architectures, including `HLAttention`.
-* `utils.py`: Helper functions for metrics, data preprocessing, and training utilities.
-* `requirements.txt`: List of required Python packages and dependencies.
+HL-GT (Hierarchical Graph Transformer)
 
-## Installation
+The models are evaluated on standard benchmark datasets using multi-seed experiments with automatic logging.
 
-We recommend using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or Anaconda to manage your environment. You can set everything up by copying and pasting the block below into your terminal:
+Installation
+1. Create environment
+conda create -n hl-gnn python=3.10
+conda activate hl-gnn
+2. Install dependencies
+pip install -r requirements.txt
 
-   ```bash
-   conda create -n hl-attn python=3.9 -y
-   conda activate hl-attn
-   pip install -r requirements.txt
+If torch-geometric installation fails, follow the official PyG installation guide:
+https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html
 
-Usage
-You can run the model using main.py. The script will automatically download the required datasets (via PyTorch Geometric) on the first run.
+Running Experiments
+Example: HL-Attn on Amazon Computers
+python main.py \
+  --dataset Computers \
+  --model Attn \
+  --layers 6 \
+  --hidden_channels 128 \
+  --heads 2 \
+  --epochs 300 \
+  --runs 3
+Supported Datasets
 
-To run a basic experiment on the Cora dataset:
+Amazon Computers
 
-'''Bash
-python main.py --dataset Cora
-To reproduce specific results from the paper:
-You can pass hyperparameters directly via command-line arguments. For example, to run on Amazon Photo with the paper's exact configuration:
+Amazon Photo
 
-'''Bash
-python main.py --dataset Photo --layers 6 --hidden_channels 512 --heads 2 --lr 0.001
-(Please refer to the hyperparameter tables in the paper's appendix for the exact configurations for each dataset).
+Cora
+
+Citeseer
+
+Pubmed
+
+Models
+HL-MPNN
+
+Hierarchical multi-layer message passing architecture built on a custom MPNN layer.
+
+HL-Attn
+
+Hierarchical architecture using graph attention layers.
+
+HL-GT
+
+Hierarchical graph transformer architecture with residual connections and feed-forward blocks.
+
+Output
+
+Results are automatically saved in:
+
+logs/
+
+Each log file includes:
+
+Mean and standard deviation across runs
+
+Per-run metrics
+
+Full experiment configuration
 
 Citation
-If you find this code or our paper useful in your research, please consider citing our work:
 
-
-Contact
-For any questions or issues with the code, please open an issue on this repository or contact alaa.m.aref@gmail.com.
+If you use this repository in your research, please cite our paper:
