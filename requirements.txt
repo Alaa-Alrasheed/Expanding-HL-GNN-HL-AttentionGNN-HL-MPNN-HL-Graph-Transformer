@@ -1,0 +1,12 @@
+# Deep Learning Framework
+torch>=2.0.0
+
+# Graph Neural Network Library (PyG)
+torch-geometric>=2.3.0
+torch-scatter
+torch-sparse
+torch-cluster
+
+# Scientific Computing & Metrics
+numpy>=1.24.0
+scikit-learn>=1.2.2
