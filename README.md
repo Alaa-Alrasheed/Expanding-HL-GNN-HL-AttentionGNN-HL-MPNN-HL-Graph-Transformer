@@ -24,12 +24,12 @@ We recommend using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) o
    cd YOUR_REPOSITORY_NAME
 Create and activate a virtual environment (optional but recommended):
 
-Bash
+'''Bash
 conda create -n hl-attn python=3.9 -y
 conda activate hl-attn
 Install the dependencies:
 
-Bash
+'''Bash
 pip install -r requirements.txt
 (Note: Depending on your hardware, you may need to install the specific versions of torch and torch_geometric that match your CUDA version from their official websites).
 
@@ -38,12 +38,12 @@ You can run the model using main.py. The script will automatically download the 
 
 To run a basic experiment on the Cora dataset:
 
-Bash
+'''Bash
 python main.py --dataset Cora
 To reproduce specific results from the paper:
 You can pass hyperparameters directly via command-line arguments. For example, to run on Amazon Photo with the paper's exact configuration:
 
-Bash
+'''Bash
 python main.py --dataset Photo --layers 6 --hidden_channels 512 --heads 2 --lr 0.001
 (Please refer to the hyperparameter tables in the paper's appendix for the exact configurations for each dataset).
 
