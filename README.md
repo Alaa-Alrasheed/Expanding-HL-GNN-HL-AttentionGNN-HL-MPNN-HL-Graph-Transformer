@@ -1,4 +1,4 @@
-# Hierarchical Learning Graph Attention Network (HL-Attn)
+**# Hierarchical Learning Graph Attention Network (HL-Attn)
 
 This repository contains the official PyTorch implementation for the paper:  
 **"[Insert Exact Paper Title Here]"**
@@ -32,6 +32,7 @@ Install the dependencies:
 '''Bash
 pip install -r requirements.txt
 (Note: Depending on your hardware, you may need to install the specific versions of torch and torch_geometric that match your CUDA version from their official websites).
+**
 
 Usage
 You can run the model using main.py. The script will automatically download the required datasets (via PyTorch Geometric) on the first run.
